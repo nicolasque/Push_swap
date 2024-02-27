@@ -1,14 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 19:04:14 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/02/22 00:18:18 by nquecedo         ###   ########.fr       */
+/*   Created: 2023/12/17 22:02:46 by nquecedo          #+#    #+#             */
+/*   Updated: 2023/12/18 12:44:34 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
+// int	main(void)
+// {
+// 	ft_putchar_fd('c', 1);
+// 	return (0);
+// }
