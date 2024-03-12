@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:36:29 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/03/12 11:19:31 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/03/12 11:38:25 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int	ft_free_list(t_stak *a)
 		free(a);
 		a = next_node;
 	}
+	a = NULL;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:04:14 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/03/07 16:58:42 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/03/12 11:34:08 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_init_stakt(t_stak **a ,char **argv)
 		temp = malloc(sizeof(t_stak));
 		if (temp == NULL)
 			return -1;
-		temp->value = atoi(argv[i]);
+		temp->value = ft_atol(argv[i]);
 		// ft_printf("Node value: %i\n", temp->value);
 		temp->next = NULL;
 		temp->prev = last;
@@ -57,7 +57,7 @@ int	main(int argc, char **argv)
 	// printf("nnnnnnn");	
 	// while (a)
 	// {
-	// 	// ft_printf("Node next value: %i\n", a->next->value);	
+	// 	// ft_printf("Node next value: %i\n", a->next->value);
 	// 	// ft_printf("Node value: %s\n", argv[i]);
 	// 	ft_printf("Node value: %i\n", a->value);
 	// 	if (!a->next)
@@ -75,5 +75,4 @@ int	main(int argc, char **argv)
 	// 	i ++;
 	// }
 	ft_printf("Cuantos nodos hay en la lista: %i", ft_listlen(a));
-	
 }

@@ -10,16 +10,17 @@ SRC =	main.c \
 OBJ = $(SRC:.c=.o)
 LIBFT = libft/libft.a
 
-all: $(NAME)
+$(LIBFT):
+	make -C libft
 
 $(NAME): $(LIBFT) $(MLX) $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME)  -Llibft -lft $(OBJ)
 
-$(LIBFT):
-	make -C libft
 
 %.o: %.c
-	$(CC) $(CFLAGS) -Imlx -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
+
+all: $(NAME) $(LIBFT)
 
 clean:
 	rm -f $(OBJ)
