@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/03/06 19:52:18 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/03/07 16:52:13 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ typedef struct t_stak
 	struct t_stak	*next;
 	struct t_stak	*prev;
 }	t_stak;
+
+int	ft_free_list(t_stak *a);
+size_t ft_listlen(t_stak *a);
 
 
 #endif //PUSH_SWAP_H

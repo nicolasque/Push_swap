@@ -6,18 +6,21 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:36:29 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/03/06 19:42:12 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/03/12 11:19:31 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_list(t_stak *a)
+int	ft_free_list(t_stak *a)
 {
+	t_stak	*next_node;
+
 	while (a)
-	{
-		free(a->prev);
-		a = a->next;
+	{	
+		next_node = a->next;
+		free(a);
+		a = next_node;
 	}
 	return (0);
 }

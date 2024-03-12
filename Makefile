@@ -3,7 +3,8 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -O3 #-fsanitize=address
 NAME = a.out
 SRC =	main.c \
-		free.c
+		free.c \
+		list_utils.c
 
 
 OBJ = $(SRC:.c=.o)
@@ -12,7 +13,7 @@ LIBFT = libft/libft.a
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(MLX) $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME)  -Llibft $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME)  -Llibft -lft $(OBJ)
 
 $(LIBFT):
 	make -C libft

@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:51:26 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/03/06 20:23:48 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/03/07 16:58:16 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t ft_listlen(t_stak *a)
 	size_t i;
 
 	i = 0;
-	while (a)
+	while (a != NULL)
 	{
 		a = a->next;
 		i++;
