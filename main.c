@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:04:14 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/15 00:27:54 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/05/15 00:39:44 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,5 @@ int	main(int argc, char **argv)
 	// 	i ++;
 	// }
 	ft_printf("Cuantos nodos hay en la lista: %i", ft_listlen(a));
+	ft_free_list(a);
 }
