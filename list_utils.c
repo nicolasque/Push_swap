@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:51:26 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/15 09:52:42 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/15 10:48:44 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,18 @@ int	ft_is_allnum(char *str)
 	}
 	return (1);
 }
+
+int ft_is_shoted(t_stak *a)
+{
+	t_stak	*temp;
+
+	temp = a;
+	while (temp->next != NULL)
+	{
+		if (temp->value > temp->next->value)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
+}
+

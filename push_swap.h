@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/15 09:52:52 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/15 10:13:56 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,22 @@ typedef struct t_stak
 	struct t_stak	*prev;
 }	t_stak;
 
+
+// free.c
 int	ft_free_list(t_stak *a);
+
+// list_utils.c
 size_t ft_listlen(t_stak *a);
 int ft_is_allnum(char *str);
+int ft_is_shoted(t_stak *a);
+
+//movements.c
+void    ft_sa(t_stak **a);
+
+// ez_cases.c
+void ft_case_two(t_stak *a);
+
+
+
 
 #endif //PUSH_SWAP_H

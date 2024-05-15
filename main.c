@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:04:14 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/15 10:03:01 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/15 10:47:05 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	ft_init_stakt(t_stak **a ,char **argv)
 		last = temp;
 		i++;
 	}
+	if (i == 1)
+		return (-1); // Return -1 if is only onenumber on the list
 	return 0; // Return 0 on success
 }
 
@@ -51,7 +53,18 @@ int	main(int argc, char **argv)
 		argv++;
 	a = (t_stak *)malloc(sizeof(t_stak) * 1);
 	if (ft_init_stakt(&a, argv) == -1)
-		return(ft_free_list(a), -1);
+		return(ft_free_list(a),ft_printf("aaaa") , -1);
+	if (ft_is_shoted(a))	
+		return(ft_free_list(a),ft_printf("Esta ordebado") , -1);
+	else
+		ft_printf("No esta ordenado\n");
+	
+	ft_printf("El primer valor de la lista es: %i\n", a->value);
+	
+	if (ft_listlen(a) == 2)
+		ft_case_two(a);
+
+
 
 	ft_printf("Cuantos nodos hay en la lista: %i", ft_listlen(a));
 	ft_free_list(a);
