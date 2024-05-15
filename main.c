@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:04:14 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/15 10:47:05 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/15 11:00:11 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,19 @@ int	ft_init_stakt(t_stak **a ,char **argv)
 	return 0; // Return 0 on success
 }
 
+int ft_check_list(t_stak *a)
+{
+	if (ft_is_shoted(a))	
+		return(ft_printf("Esta ordebado") , -1);
+	if (ft_is_repeat(a))
+		return (ft_printf("Hay repetidos\n") , -1);
+
+	ft_printf("No esta ordenado\n");
+	return (0);
+}
+
+
+
 int	main(int argc, char **argv)
 {
 	t_stak	*a;
@@ -52,12 +65,9 @@ int	main(int argc, char **argv)
 	else
 		argv++;
 	a = (t_stak *)malloc(sizeof(t_stak) * 1);
-	if (ft_init_stakt(&a, argv) == -1)
+	if (ft_init_stakt(&a, argv) == -1 || ft_check_list(a) == -1)
 		return(ft_free_list(a),ft_printf("aaaa") , -1);
-	if (ft_is_shoted(a))	
-		return(ft_free_list(a),ft_printf("Esta ordebado") , -1);
-	else
-		ft_printf("No esta ordenado\n");
+	
 	
 	ft_printf("El primer valor de la lista es: %i\n", a->value);
 	

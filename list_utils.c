@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:51:26 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/15 10:48:44 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/15 10:54:59 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,22 @@ int ft_is_shoted(t_stak *a)
 	return (1);
 }
 
+int ft_is_repeat(t_stak *a)
+{
+	t_stak	*temp;
+	t_stak	*temp2;
+
+	temp = a;
+	while (temp->next != NULL)
+	{
+		temp2 = temp->next;
+		while (temp2 != NULL)
+		{
+			if (temp->value == temp2->value)
+				return (1);
+			temp2 = temp2->next;
+		}
+		temp = temp->next;
+	}
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/15 10:13:56 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/15 10:55:24 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	ft_free_list(t_stak *a);
 size_t ft_listlen(t_stak *a);
 int ft_is_allnum(char *str);
 int ft_is_shoted(t_stak *a);
+int ft_is_repeat(t_stak *a);
+
 
 //movements.c
 void    ft_sa(t_stak **a);
