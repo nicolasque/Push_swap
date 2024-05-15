@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:51:26 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/15 10:54:59 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/15 11:19:57 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 size_t ft_listlen(t_stak *a)
 {
 	size_t i;
+	t_stak *temp;
 
+	temp = a;
 	i = 0;
-	while (a != NULL)
+	while (temp != NULL)
 	{
-		a = a->next;
+		temp = temp->next;
 		i++;
 	}
 	return (i);
@@ -71,4 +73,16 @@ int ft_is_repeat(t_stak *a)
 		temp = temp->next;
 	}
 	return (0);
+}
+
+void	ft_print_list(t_stak *a)
+{
+	t_stak	*temp;
+
+	temp = a;
+	while (temp != NULL)
+	{
+		ft_printf("%i\n", temp->value);
+		temp = temp->next;
+	}
 }

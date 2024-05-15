@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:04:14 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/15 11:00:11 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/15 11:28:21 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,27 @@ int ft_check_list(t_stak *a)
 	return (0);
 }
 
+t_stak	*ft_get_smaller_node(t_stak *a)
+{
+	t_stak	*temp;
+	t_stak	*smaller;
+
+	temp = a;
+	smaller = a;
+	while (temp)
+	{
+		if (temp->value < smaller->value)
+			smaller = temp;
+		temp = temp->next;
+	}
+	return (smaller);
+}
 
 
 int	main(int argc, char **argv)
 {
 	t_stak	*a;
+	t_stak	*smaller;
 
 	if (argc < 2)
 		return (0);
@@ -66,16 +82,11 @@ int	main(int argc, char **argv)
 		argv++;
 	a = (t_stak *)malloc(sizeof(t_stak) * 1);
 	if (ft_init_stakt(&a, argv) == -1 || ft_check_list(a) == -1)
-		return(ft_free_list(a),ft_printf("aaaa") , -1);
-	
-	
-	ft_printf("El primer valor de la lista es: %i\n", a->value);
-	
-	if (ft_listlen(a) == 2)
-		ft_case_two(a);
-
-
-
-	ft_printf("Cuantos nodos hay en la lista: %i", ft_listlen(a));
+		return(ft_free_list(a),ft_printf("\nPrograma para \n") , -1);
+	smaller = ft_get_smaller_node(a);
+	if (ft_listlen(a) <= 5)
+		ft_ez_case(a);
+	ft_print_list(smaller);
 	ft_free_list(a);
+	return (0);
 }
