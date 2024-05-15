@@ -1,29 +1,22 @@
 # Variables
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -O3 #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -O3
 NAME = a.out
-SRC =	main.c \
-		free.c \
-		list_utils.c
-
-
-OBJ = $(SRC:.c=.o)
+SRC = main.c free.c list_utils.c
 LIBFT = libft/libft.a
+
+all: $(NAME)
+
+$(NAME): $(LIBFT) $(OBJ)
+	$(CC) $(CFLAGS) $(SRC) -L libft -lft -o $(NAME)
 
 $(LIBFT):
 	make -C libft
 
-$(NAME): $(LIBFT) $(MLX) $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME)  -Llibft -lft $(OBJ)
-
-
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-all: $(NAME) $(LIBFT)
-
 clean:
-	rm -f $(OBJ)
 	make -C libft clean
 
 fclean: clean
