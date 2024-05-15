@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:04:14 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/15 00:39:44 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/05/15 10:03:01 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft/libft.h"
 
 int	ft_init_stakt(t_stak **a ,char **argv)
 {
@@ -22,11 +23,10 @@ int	ft_init_stakt(t_stak **a ,char **argv)
 	last = NULL;
 	while (argv[i])
 	{
-		temp = malloc(sizeof(t_stak));
-		if (temp == NULL)
-			return -1;
+		temp = malloc(1 * sizeof(t_stak));
+		if (temp == NULL || !ft_is_allnum(argv[i]))
+			return (ft_printf("Error\n"), -1);
 		temp->value = ft_atol(argv[i]);
-		// ft_printf("Node value: %i\n", temp->value);
 		temp->next = NULL;
 		temp->prev = last;
 		if (last != NULL)
@@ -42,7 +42,6 @@ int	ft_init_stakt(t_stak **a ,char **argv)
 int	main(int argc, char **argv)
 {
 	t_stak	*a;
-	int		i;
 
 	if (argc < 2)
 		return (0);
@@ -53,28 +52,7 @@ int	main(int argc, char **argv)
 	a = (t_stak *)malloc(sizeof(t_stak) * 1);
 	if (ft_init_stakt(&a, argv) == -1)
 		return(ft_free_list(a), -1);
-	i = 0;
-	i++;
-	// printf("nnnnnnn");	
-	// while (a)
-	// {
-	// 	// ft_printf("Node next value: %i\n", a->next->value);
-	// 	// ft_printf("Node value: %s\n", argv[i]);
-	// 	ft_printf("Node value: %i\n", a->value);
-	// 	if (!a->next)
-	// 		break;
-	// 	a = a->next;
-		
-	// 	i ++;
-	// }
-	// ft_printf("Cambop de orden\n");
-	// while (a)
-	// {
-	// ft_printf("Node value: %i\n", a->value);
-	// 	// ft_printf("Node value: %s\n", argv[i]);
-	// 	a = a->prev;
-	// 	i ++;
-	// }
+
 	ft_printf("Cuantos nodos hay en la lista: %i", ft_listlen(a));
 	ft_free_list(a);
 }

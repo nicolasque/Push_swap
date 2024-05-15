@@ -7,14 +7,11 @@ LIBFT = libft/libft.a
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJ)
+$(NAME): $(LIBFT) $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -L libft -lft -o $(NAME)
 
 $(LIBFT):
 	make -C libft
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	make -C libft clean
