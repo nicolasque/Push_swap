@@ -20,6 +20,8 @@ int ft_is_all_num(char *str)
 	i = 0;
 	while (str[i])
 	{
+		if (str[i] == '-' || str[i] == '+')
+			i++;
 		if (!ft_isdigit(str[i]))
 			return (0);
 		i++;
