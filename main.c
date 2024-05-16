@@ -27,11 +27,23 @@ int ft_is_all_num(char *str)
 	return (1);
 }
 
-int ft_is_repeat(int argc, char** argv)
+int ft_is_repeat(int argc, char** argv, char *str, int list_position)
 {
-	int i;
+	int	i;
 
-
+	i = 1;
+	while (i < argc)
+	{
+		if (i == list_position)
+			return (0);
+		else
+		{
+			if (!ft_strncmp(str, argv[i], 11))
+				return (-1);
+		}
+		i ++;
+	}
+	return (0);
 }
 
 
@@ -46,7 +58,7 @@ int	ft_check_args(int argc, char **argv)
 	{
 		if (!ft_is_all_num(argv[i]))
 			return (-1);
-		if (ft_is_repeat(argc, argv[]))
+		if (ft_is_repeat(argc, argv, argv[i], i))
 			return (-2);
 		i++;
 	}
