@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   movements.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nquecedo <nquecedo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 10:08:19 by nquecedo         #+#    #+#             */
-/*   Updated: 2024/05/15 10:08:20 by nquecedo        ###   ########.fr       */
+/*   Created: 2024/05/16 20:07:40 by nquecedo          #+#    #+#             */
+/*   Updated: 2024/05/16 20:07:44 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "push_swap.h"
 
@@ -20,7 +21,7 @@ int ft_is_all_num(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == '-' || str[i] == '+')
+		if (str[i] == '-')
 			i++;
 		if (!ft_isdigit(str[i]))
 			return (0);
