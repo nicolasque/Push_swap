@@ -64,22 +64,33 @@ int	ft_check_args(int argc, char **argv)
 			return (-2);
 		i++;
 	}
-	
+
 	return (0);
 }
 
 
-// t_stak  *ft_init_stack(t_stak *a, char **argv)
-// {
+t_stak  *ft_init_stack(int argc, char **argv, t_stak **a)
+{
+	int i;
+
+	i = 1;
+	while (i < argc)
+	{
+		a
+	}
 	
-// }
+}
+
 
 int main(int argc, char **argv)
 {
-	// t_stak  **a;
+	t_stak  **a;
 	// t_stak  **b;
 
-	ft_printf("La respuesta es: %d",ft_check_args(argc, argv));
+	if (ft_check_args(argc, argv));
+		return (ft_printf("Error\n"), -1);
+	ft_init_stack()
+
 	return (0);
 
 }
