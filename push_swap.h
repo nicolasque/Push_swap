@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/15 11:19:05 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/16 19:40:44 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	ft_free_list(t_stak *a);
 size_t ft_listlen(t_stak *a);
 int ft_is_allnum(char *str);
 int ft_is_shoted(t_stak *a);
-int ft_is_repeat(t_stak *a);
 void	ft_print_list(t_stak *a);
 
 
