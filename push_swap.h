@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/17 10:01:42 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/17 10:19:59 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int ft_is_all_num(char *str);
 int ft_is_repeat(int argc, char** argv, char *str, int list_position);
 int ft_is_order(t_stak *a);
 
-
+//free.c
+void    ft_free_stack(t_stak *a);
 
 
 

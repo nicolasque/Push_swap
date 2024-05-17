@@ -26,7 +26,7 @@ int	ft_init_stack(int argc, char **argv, t_stak *a)
 		a->li_pos = i - 1;
 		a->next = (t_stak *)malloc(1 * sizeof(t_stak));
 		if (!a->next)
-			return (-1);
+			return (ft_free_stack(a) ,-1);
 		a->next->prev = a;
 		a = a->next;
 		i++;
@@ -64,7 +64,7 @@ int main(int argc, char **argv)
 	if (ft_init_stack(argc, argv, a))
 		return (-1);
 	if (!ft_is_order(a))
-		return (0); //If the stak is ordered you do nothing (TODO: FREE THE MEMORY)
+		return (ft_free_stack(a), 0); //If the stak is ordered you do nothing (TODO: FREE THE MEMORY)
 
 	ft_print_stack(a);
 	ft_printf("aaaaa\n");
