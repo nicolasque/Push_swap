@@ -14,7 +14,9 @@
 
 
 int	ft_check_args(int argc, char **argv)
-{}
+{
+	
+}
 
 
 t_stak  *ft_init_stack(t_stak *a, char **argv)
