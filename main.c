@@ -67,8 +67,9 @@ int main(int argc, char **argv)
 		return (ft_free_stack(a), 0); //If the stak is ordered you do nothing (TODO: FREE THE MEMORY)
 
 	ft_print_stack(a);
-	ft_printf("aaaaa\n");
-	ft_print_stack(a);
+	// ft_printf("aaaaa\n");
+	// ft_print_stack(a);
+	ft_printf("Largo de la lista: %i \n", ft_list_len(a));
 
 	return (0);
 
