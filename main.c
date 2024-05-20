@@ -67,17 +67,19 @@ int main(int argc, char **argv)
 		return (ft_free_stack(a), 0); //If the stak is ordered you do nothing and return 0
 	
 
-	ft_print_stack(a);
-	// ft_printf("aaaaa\n");
 	// ft_print_stack(a);
-	ft_printf("Largo de la lista: %i \n", ft_list_len(a));
+	// // ft_printf("aaaaa\n");
+	// // ft_print_stack(a);
+	// ft_printf("Largo de la lista: %i \n", ft_list_len(a));
 
-	ft_sa(&a);
-	ft_print_stack(a);
+	// ft_sa(&a);
 	// ft_print_stack(a);
-	// ft_printf("aaaaa\n");
-	// ft_print_stack(a);
-	ft_printf("Largo de la lista: %i \n", ft_list_len(a));
+	// // ft_print_stack(a);
+	// // ft_printf("aaaaa\n");
+	// // ft_print_stack(a);
+	// ft_printf("Largo de la lista: %i \n", ft_list_len(a));
+
+	ft_printf("Last node: %i\n", ft_get_last_node(a)->value);
 
 	return (0);
 

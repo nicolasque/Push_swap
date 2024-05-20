@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:24:28 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/20 08:06:10 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/20 10:58:14 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,12 @@ void    ft_sa(t_stak **a)
     temp->prev = *a;
     ft_printf("sa\n");
 }
+
+// void ft_ra(t_stak **a)
+// {
+//     t_stak  *first;
+//     t_stak  *last;
+
+//     first = *a;
+//     a* = 
+// }
