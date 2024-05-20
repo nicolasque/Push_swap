@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/17 10:35:19 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/20 08:04:43 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,9 @@ void    ft_free_stack(t_stak *a);
 
 //list_utils.c
 int ft_list_len(t_stak *a);
+
+//movements_a.c
+void    ft_sa(t_stak **a);
+
 
 #endif //PUSH_SWAP_H

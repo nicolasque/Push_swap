@@ -6,17 +6,26 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:24:28 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/17 10:36:17 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/20 08:06:10 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void    ft_sa(t_stak *a)
-// {
-//     t_stak  *temp;
+void    ft_sa(t_stak **a)
+{
+    t_stak *temp;
 
-//     if (ft_list_len(a) > 2)
-    
-//     temp = a;
-// }
+    if (*a == NULL || (*a)->next == NULL)
+        return;
+
+    temp = *a;
+    *a = (*a)->next;
+    temp->next = (*a)->next;
+    (*a)->next = temp;
+    (*a)->prev = NULL;
+    if (temp->next != NULL)
+        temp->next->prev = temp;
+    temp->prev = *a;
+    ft_printf("sa\n");
+}
