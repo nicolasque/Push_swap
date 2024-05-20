@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:35:53 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/17 18:20:06 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/20 17:05:44 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	ft_check_args(int argc, char **argv)
 
 int ft_is_order(t_stak *a)
 {
-    while (a->next->next)
+    while (a->next)
     {
         // ft_printf("Se esta comprando: %i >= %i\n", a->value, a->next->value);
         if (a->value >= a->next->value)

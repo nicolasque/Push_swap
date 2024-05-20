@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/20 17:01:32 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/20 17:04:33 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ int main(int argc, char **argv)
 	if (!ft_is_order(a))
 		return (ft_free_stack(a), 0); //If the stak is ordered you do nothing and return 0
 	
-
 	ft_print_stack(a);
 
 	ft_printf("Largo de la lista: %i \n", ft_list_len(a));
