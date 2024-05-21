@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:35:53 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/20 17:05:44 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/21 19:16:41 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,11 @@ int ft_is_order(t_stak *a)
         // printf("aaa");
     }
     return (0);
+}
+
+int	ft_check_max_min_int(long nbr)
+{
+	if (nbr > INT_MAX || nbr < INT_MIN)
+		return (1);
+	return (0);
 }
