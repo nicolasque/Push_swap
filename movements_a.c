@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:24:28 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/21 11:06:23 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/21 11:14:03 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_rra(t_stak **a)
 		return ;
 	first = *a;
 	first->prev = ft_get_last_node(*a);
-	ft_get_last_node(*a)->next = first;
+	first->prev->next = first;
 	*a = first->next;
 	(*a)->prev = NULL;
 	first->next = NULL;
