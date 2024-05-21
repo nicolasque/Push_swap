@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/20 17:04:33 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/21 10:58:35 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int main(int argc, char **argv)
 
 	ft_printf("Largo de la lista: %i \n", ft_list_len(a));
 
-	ft_ra(&a);
+	ft_rra(&a);
 	ft_print_stack(a);
 	ft_printf("Largo de la lista: %i \n", ft_list_len(a));
 	ft_printf("Last node: %i\n", ft_get_last_node(a)->value);
