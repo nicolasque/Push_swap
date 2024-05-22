@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:24:28 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/21 20:03:28 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/22 08:00:15 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,20 +62,21 @@ void	ft_rra(t_stak **a)
 	ft_printf("rra\n");
 }
 
+
+// Move from stack a to stack b
 void	ft_pb(t_stak **a, t_stak **b)
 {
-    t_stak	*temp;
+    t_stak  *temp;
 
+    temp = *a;
     if (!*a)
         return ;
-    temp = *a;
     *a = (*a)->next;
-    if (*a) 
-		(*a)->prev = NULL; // Asegúrate de que a no es NULL antes de acceder a prev
-    temp->next = *b; // temp se convierte en el nuevo inicio de b, por lo que su next debería ser el antiguo inicio de b
+    if (*a)
+    (*a)->prev = NULL;
     if (*b)
-		(*b)->prev = temp; // Si b no es NULL, su prev debería ser temp
+        (*b)->prev = temp;
+    temp->next = *b;
     *b = temp;
-    temp->prev = NULL;
-    ft_printf("pb\n");	
+    ft_printf("pb\n");
 }

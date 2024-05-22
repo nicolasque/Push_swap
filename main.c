@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/21 20:04:06 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/22 07:57:00 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ int main(int argc, char **argv)
 	ft_printf("Stak B:\n");
 	ft_print_stack(b);
 	
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
 	ft_pb(&a, &b);
 	ft_pb(&a, &b);
 	ft_pb(&a, &b);
