@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/22 08:35:59 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/22 11:05:51 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ void ft_rb(t_stak **b);
 
 
 //movements_comon.c
+void    ft_sx(t_stak **stak);
+void    ft_rx(t_stak **stak);
+void	ft_rrx(t_stak **stak);
+
 void	ft_pb(t_stak **a, t_stak **b);
 void	ft_pa(t_stak **a, t_stak **b);
 
