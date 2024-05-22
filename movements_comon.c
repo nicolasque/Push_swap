@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 08:00:56 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/22 11:06:46 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/22 11:42:56 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void    ft_sx(t_stak **stak)
 {
-    t_stak *temp;
+	t_stak *temp;
 
 	if (*stak == NULL || (*stak)->next == NULL)
 		return;
@@ -48,53 +48,56 @@ void ft_rx(t_stak **stak)
 	temp->next = NULL;
 }
 
-void	ft_rrx(t_stak **stak)
+void ft_rrx(t_stak **stak)
 {
-	t_stak	*first;
+	t_stak *last;
+	t_stak *first;
 
-	if (!*stak|| !(*stak)->next)
+	if (*stak == NULL || (*stak)->next == NULL)
 		return ;
+
+	last = ft_get_last_node(*stak);
 	first = *stak;
-	first->prev = ft_get_last_node(*stak);
-	first->prev->next = first;
-	*stak = first->next;
-	(*stak)->prev = NULL;
-	first->next = NULL;
+	last->prev->next = NULL;
+	last->next = first;
+	last->prev = NULL;
+	first->prev = last;
+	*stak = last;
 }
 
 
 // Move from stack a to stack b
 void	ft_pb(t_stak **a, t_stak **b)
 {
-    t_stak  *temp;
+	t_stak  *temp;
 
-    temp = *a;
-    if (!*a)
-        return ;
-    *a = (*a)->next;
-    if (*a)
-    (*a)->prev = NULL;
-    if (*b)
-        (*b)->prev = temp;
-    temp->next = *b;
-    *b = temp;
-    ft_printf("pb\n");
+	temp = *a;
+	if (!*a)
+		return ;
+	*a = (*a)->next;
+	if (*a)
+	(*a)->prev = NULL;
+	if (*b)
+		(*b)->prev = temp;
+	temp->next = *b;
+	*b = temp;
+	ft_printf("pb\n");
 }
 
 
 void	ft_pa(t_stak **a, t_stak **b)
 {
-    t_stak  *temp;
+	t_stak  *temp;
 
-    temp = *b;
-    if (!*b)
-        return ;
-    *b = (*b)->next;
-    if (*b)
-    (*b)->prev = NULL;
-    if (*a)
-        (*a)->prev = temp;
-    temp->next = *a;
-    *a = temp;
-    ft_printf("pa\n");
+	temp = *b;
+	if (!*b)
+		return ;
+	*b = (*b)->next;
+	if (*b)
+	(*b)->prev = NULL;
+	if (*a)
+		(*a)->prev = temp;
+	temp->next = *a;
+	*a = temp;
+	ft_printf("pa\n");
 }
