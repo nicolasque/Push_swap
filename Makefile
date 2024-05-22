@@ -2,7 +2,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -O3
 NAME = a.out
-SRC = main.c check_args.c free.c movements_a.c list_utils.c
+SRC = main.c check_args.c free.c movements_a.c list_utils.c movements_b.c movements_comon.c
 LIBFT = libft/libft.a
 
 all: $(NAME)

@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/22 07:57:00 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/22 08:34:19 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_print_stack(t_stak *a)
 		return ;
 	while (a)
 	{
-		printf("El valor es: %i\n", a->value);
+		printf("%i\n", a->value);
 		a = a->next;
 	}
 }
@@ -75,25 +75,50 @@ int main(int argc, char **argv)
 	if (!ft_is_order(a))
 		return (ft_free_stack(a), 0); //If the stak is ordered you do nothing and return 0
 	
-	ft_printf("Stak A:\n");
-	ft_print_stack(a);
-	
-	ft_printf("Stak B:\n");
-	ft_print_stack(b);
-	
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_printf("\n=============\n");
-	ft_printf("Stak A:\n");
-	ft_print_stack(a);
-	
-	ft_printf("Stak B:\n");
-	ft_print_stack(b);
-	
+	 printf("Init a and b:\n");
+    ft_print_stack(a);
+    printf("_ _\na b\n");
+
+    ft_sa(&a);
+    printf("Exec sa:\n");
+    ft_print_stack(a);
+    printf("_ _\na b\n");
+
+    ft_pb(&a, &b);
+    ft_pb(&a, &b);
+    ft_pb(&a, &b);
+    printf("Exec pb pb pb:\n");
+    ft_print_stack(a);
+    ft_print_stack(b);
+    printf("_ _\na b\n");
+
+    ft_ra(&a);
+    ft_rb(&b);
+    printf("Exec ra rb (equiv. to rr):\n");
+    ft_print_stack(a);
+    ft_print_stack(b);
+    printf("_ _\na b\n");
+
+    ft_rra(&a);
+    ft_rrb(&b);
+    printf("Exec rra rrb (equiv. to rrr):\n");
+    ft_print_stack(a);
+    ft_print_stack(b);
+	printf("_ _\na b\n");
+
+    ft_sa(&a);
+    printf("Exec sa:\n");
+    ft_print_stack(a);
+    ft_print_stack(b);
+    printf("_ _\na b\n");
+
+    ft_pa(&a, &b);
+    ft_pa(&a, &b);
+    ft_pa(&a, &b);
+    printf("Exec pa pa pa:\n");
+    ft_print_stack(a);
+    printf("_ _\na b\n");
+
 	return (0);
 
 }

@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/21 19:54:34 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/22 08:35:59 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,18 @@ t_stak  *ft_get_last_node(t_stak *a);
 void    ft_sa(t_stak **a);
 void	ft_ra(t_stak **a);
 void	ft_rra(t_stak **a);
-void	ft_pb(t_stak **a, t_stak **b);
 
+
+//movements_b.c
+void    ft_sb(t_stak **b);
+void	ft_rrb(t_stak **b);
+void ft_rb(t_stak **b);
+
+
+
+//movements_comon.c
+void	ft_pb(t_stak **a, t_stak **b);
+void	ft_pa(t_stak **a, t_stak **b);
 
 
 
