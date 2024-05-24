@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/22 11:05:51 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/24 08:34:35 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,13 @@ void ft_rb(t_stak **b);
 void    ft_sx(t_stak **stak);
 void    ft_rx(t_stak **stak);
 void	ft_rrx(t_stak **stak);
-
 void	ft_pb(t_stak **a, t_stak **b);
 void	ft_pa(t_stak **a, t_stak **b);
 
+//ez_short.c
+void    ft_short_two(t_stak **a);
+void    ft_short_three(t_stak **a);
+t_stak	*ft_ez_short(t_stak *a);
 
 
 
