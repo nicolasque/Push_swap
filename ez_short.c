@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 08:08:07 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/24 08:35:59 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/24 09:58:52 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void    ft_short_three(t_stak **a)
         ft_sa(a);
     else if (second > first && second > third)
     {
+        ft_sa(a);
         ft_ra(a);
     }
     else if (first > third && third > second)
@@ -56,4 +57,3 @@ void    ft_short_three(t_stak **a)
         ft_ra(a);
     }
     }
-    
