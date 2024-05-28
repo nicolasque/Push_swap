@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 08:08:07 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/28 10:50:40 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/28 10:57:53 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,37 @@ void    ft_short_two(t_stack **a)
     exit(0);
 }
 
-void ft_short_three(t_stack **a) {
+void ft_short_three(t_stack **a)
+{
     int first = (*a)->value;
     int second = (*a)->next->value;
     int third = (*a)->next->next->value;
 
-    if (first > second) {
-        if (second > third) { // Case [3, 2, 1]
+    if (first > second)
+    {
+        if (second > third) 
+        { // Case [3, 2, 1]
             ft_sa(a);
             ft_rra(a);
-        } else if (first > third) { // Case [2, 1, 3]
+        } 
+        else if (first > third) 
             ft_ra(a);
-        } else {  // Case [2, 3, 1]
+        else
+        {
             ft_rra(a);  // Corrected operation
             ft_sa(a);
-            ft_rra(a);  // Corrected operation
-        }
-    } else { // first < second
-        if (first > third) { // Case [1, 3, 2]
             ft_rra(a);
-        } else if (second > third) { // Case [1, 2, 3]
+        }
+    }
+    else
+    { // first < second
+        if (first > third)
+            ft_rra(a);
+        else if (second > third)
+        { // Case [1, 2, 3]
             ft_sa(a);
             ft_ra(a);
         } // Case [3, 1, 2] - already sorted, do nothing
     }
 }
+
