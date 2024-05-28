@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:35:53 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/21 19:16:41 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/28 10:39:04 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_check_args(int argc, char **argv)
 	return (0);
 }
 
-int ft_is_order(t_stak *a)
+int ft_is_order(t_stack *a)
 {
     while (a->next)
     {

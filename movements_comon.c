@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 08:00:56 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/24 10:11:21 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/28 10:43:22 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,62 +14,64 @@
 #include "push_swap.h"
 
 
-void    ft_sx(t_stak **stak)
+void    ft_sx(t_stack **stack)
 {
-	t_stak *temp;
+    if (*stack == NULL || (*stack)->next == NULL) {
+        return; 
+    }
 
-	if (*stak == NULL || (*stak)->next == NULL)
-		return;
+    t_stack *temp = (*stack)->next; 
+    (*stack)->next = temp->next;
 
-	temp = *stak;
-	*stak = (*stak)->next;
-	temp->next = (*stak)->next;
-	(*stak)->next = temp;
-	(*stak)->prev = NULL;
-	if (temp->next != NULL)
-		temp->next->prev = temp;
-	temp->prev = *stak;
+    if (temp->next != NULL) {
+        temp->next->prev = *stack;
+    }
+
+    temp->prev = NULL; 
+    temp->next = *stack;
+    (*stack)->prev = temp;
+    *stack = temp; 
 }
 
 
-void ft_rx(t_stak **stak)
+void ft_rx(t_stack **stack)
 {
-	t_stak  *temp;
-	t_stak  *last;
+	t_stack  *temp;
+	t_stack  *last;
 
-	if (*stak == NULL || (*stak)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	last = ft_get_last_node(*stak);
-	temp = (*stak);
-	*stak = (*stak)->next;
-	(*stak)->prev = NULL;
+	last = ft_get_last_node(*stack);
+	temp = (*stack);
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
 	last->next = temp;
 	temp->prev = last;
 	temp->next = NULL;
 }
 
-void ft_rrx(t_stak **stak)
+void ft_rrx(t_stack **stack)
 {
-	t_stak *last;
-	t_stak *first;
+	t_stack *last;
+	t_stack *first;
 
-	if (*stak == NULL || (*stak)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
 
-	last = ft_get_last_node(*stak);
-	first = *stak;
+	last = ft_get_last_node(*stack);
+	first = *stack;
 	last->prev->next = NULL;
 	last->next = first;
 	last->prev = NULL;
 	first->prev = last;
-	*stak = last;
+	*stack = last;
 }
 
 
 // Move from stack a to stack b
-void	ft_pb(t_stak **a, t_stak **b)
+void	ft_pb(t_stack **a, t_stack **b)
 {
-	t_stak  *temp;
+	t_stack  *temp;
 
 	temp = *a;
 	if (!*a)
@@ -85,9 +87,9 @@ void	ft_pb(t_stak **a, t_stak **b)
 }
 
 
-void	ft_pa(t_stak **a, t_stak **b)
+void	ft_pa(t_stack **a, t_stack **b)
 {
-	t_stak  *temp;
+	t_stack  *temp;
 
 	temp = *b;
 	if (!*b)

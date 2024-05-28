@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void    ft_sa(t_stak **a)
+void    ft_sa(t_stack **a)
 {
-    t_stak	*temp;
+    t_stack	*temp;
 
     if (*a == NULL || (*a)->next == NULL)
         return ;
@@ -29,9 +29,9 @@ void    ft_sa(t_stak **a)
     ft_printf("sa\n");
 }
 
-void   ft_sb(t_stak **b)
+void   ft_sb(t_stack **b)
 {
-    t_stak	*temp;
+    t_stack	*temp;
 
     if (*b == NULL || (*b)->next == NULL)
         return ;
@@ -46,16 +46,16 @@ void   ft_sb(t_stak **b)
     ft_printf("sb\n");
 }
 
-void    ft_ss(t_stak **a, t_stak **b)
+void    ft_ss(t_stack **a, t_stack **b)
 {
     ft_sa(a);
     ft_sb(b);
     ft_printf("ss\n");
 }
 
-void    ft_pa(t_stak **a, t_stak **b)
+void    ft_pa(t_stack **a, t_stack **b)
 {
-    t_stak	*temp;
+    t_stack	*temp;
 
     if (*b == NULL)
         return ;
@@ -71,9 +71,9 @@ void    ft_pa(t_stak **a, t_stak **b)
     ft_printf("pa\n");
 }
 
-void   ft_pb(t_stak **a, t_stak **b)
+void   ft_pb(t_stack **a, t_stack **b)
 {
-    t_stak	*temp;
+    t_stack	*temp;
 
     if (*a == NULL)
         return ;
@@ -89,9 +89,9 @@ void   ft_pb(t_stak **a, t_stak **b)
     ft_printf("pb\n");
 }   
 
-void    ft_ra(t_stak **a)
+void    ft_ra(t_stack **a)
 {
-    t_stak	*temp;
+    t_stack	*temp;
 
     if (*a == NULL || (*a)->next == NULL)
         return ;
@@ -108,9 +108,9 @@ void    ft_ra(t_stak **a)
     ft_printf("ra\n");
 }
 
-void    ft_rb(t_stak **b)
+void    ft_rb(t_stack **b)
 {
-    t_stak	*temp;
+    t_stack	*temp;
 
     if (*b == NULL || (*b)->next == NULL)
         return ;
@@ -127,16 +127,16 @@ void    ft_rb(t_stak **b)
     ft_printf("rb\n");
 }
 
-void    ft_rr(t_stak **a, t_stak **b)
+void    ft_rr(t_stack **a, t_stack **b)
 {
     ft_ra(a);
     ft_rb(b);
     ft_printf("rr\n");
 }
 
-void    ft_rra(t_stak **a)
+void    ft_rra(t_stack **a)
 {
-    t_stak	*temp;
+    t_stack	*temp;
 
     if (*a == NULL || (*a)->next == NULL)
         return ;
@@ -155,9 +155,9 @@ void    ft_rra(t_stak **a)
     ft_printf("rra\n");
 }
 
-void    ft_rrb(t_stak **b)
+void    ft_rrb(t_stack **b)
 {
-    t_stak	*temp;
+    t_stack	*temp;
 
     if (*b == NULL || (*b)->next == NULL)
         return ;
@@ -176,7 +176,7 @@ void    ft_rrb(t_stak **b)
     ft_printf("rrb\n");
 }
 
-void    ft_rrr(t_stak **a, t_stak **b)
+void    ft_rrr(t_stack **a, t_stack **b)
 {
     ft_rra(a);
     ft_rrb(b);

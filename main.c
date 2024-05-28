@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/24 10:14:05 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/28 10:39:04 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "push_swap.h"
 
-int	ft_init_stack(int argc, char **argv, t_stak *a)
+int	ft_init_stack(int argc, char **argv, t_stack *a)
 {
 	int i;
 
@@ -28,7 +28,7 @@ int	ft_init_stack(int argc, char **argv, t_stak *a)
 		// a->li_pos = i;
 		if (i < argc - 1)
 		{
-			a->next = (t_stak *)malloc(1 * sizeof(t_stak));
+			a->next = (t_stack *)malloc(1 * sizeof(t_stack));
 			if (!a->next || ft_check_max_min_int(a->value))
 				return (ft_free_stack(a) ,-1);
 			a->next->prev = a;
@@ -40,7 +40,7 @@ int	ft_init_stack(int argc, char **argv, t_stak *a)
 	return (0);
 }
 
-void	ft_print_stack(t_stak *a)
+void	ft_print_stack(t_stack *a)
 {
 	if (a == NULL)
 		return ;
@@ -51,7 +51,7 @@ void	ft_print_stack(t_stak *a)
 	}
 }
 
-void	ft_print_revese(t_stak *a)
+void	ft_print_revese(t_stack *a)
 {
 	a = ft_get_last_node(a);
 	while (a)
@@ -63,30 +63,24 @@ void	ft_print_revese(t_stak *a)
 
 int main(int argc, char **argv)
 {
-	t_stak  *a;
-	t_stak  *b;
+	t_stack  *a;
+	// t_stack  *b;
 
 	if (ft_check_args(argc, argv))
 		return (ft_printf("Error\n"), -1);
-	a = (t_stak *)malloc(1 * sizeof(t_stak));
-	b = NULL;
+	a = (t_stack *)malloc(1 * sizeof(t_stack));
+	// b = NULL;
 	if (ft_init_stack(argc, argv, a))
 		return (-1);
 	if (!ft_is_order(a))
-		return (ft_free_stack(a), 0); //If the stak is ordered you do nothing and return 0
-
-	// if (ft_list_len(a) <= 4)
-	// 	a = ft_ez_short(a);
-
+		return (ft_free_stack(a), 0); //If the stack is ordered you do nothing and return 0
 
 	ft_print_stack(a);
+	if (ft_list_len(a) <= 4)
+		a = ft_ez_short(a);
+
+
 	ft_printf("=======\n");
-	ft_pb(&a, &b);
-	ft_print_stack(a);
-	ft_printf("=======\n");
-	ft_print_stack(b);
-	ft_printf("=======\n");
-	ft_pa(&a, &b);
 	ft_print_stack(a);
 	// while (ft_is_order(a))
 	// {

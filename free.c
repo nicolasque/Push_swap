@@ -6,15 +6,15 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:16:13 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/17 10:19:06 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/28 10:39:04 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_free_stack(t_stak *a)
+void    ft_free_stack(t_stack *a)
 {
-    t_stak  *next;
+    t_stack  *next;
 
     while (a)
     {

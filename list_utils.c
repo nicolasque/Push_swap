@@ -6,13 +6,13 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:32:38 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/22 11:20:45 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/28 10:39:04 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_list_len(t_stak *a)
+int ft_list_len(t_stack *a)
 {
     int i;
 
@@ -25,7 +25,7 @@ int ft_list_len(t_stak *a)
     return (i);
 }
 
-t_stak  *ft_get_last_node(t_stak *a)
+t_stack  *ft_get_last_node(t_stack *a)
 {
     while (a->next)
     {

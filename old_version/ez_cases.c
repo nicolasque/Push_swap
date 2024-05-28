@@ -1,12 +1,12 @@
 #include "push_swap.h"
 
-void ft_case_two(t_stak *a)
+void ft_case_two(t_stack *a)
 {
     if (a->value > a->next->value)
         ft_sa(&a);
 }
 
-void ft_case_three(t_stak *a)
+void ft_case_three(t_stack *a)
 {
     if (a->value > a->next->value && a->value > a->next->next->value)
     {
@@ -31,7 +31,7 @@ void ft_case_three(t_stak *a)
         ft_rra(&a);
 }
 
-void ft_case_four(t_stak *a)
+void ft_case_four(t_stack *a)
 {
     if (a->value > a->next->value && a->value > a->next->next->value && a->value > a->next->next->next->value)
     {
@@ -63,7 +63,7 @@ void ft_case_four(t_stak *a)
         ft_rra(&a);
 }
 
-void ft_case_five(t_stak *a)
+void ft_case_five(t_stack *a)
 {
     if (a->value > a->next->value && a->value > a->next->next->value && a->value > a->next->next->next->value && a->value > a->next->next->next->next->value)
     {
@@ -107,7 +107,7 @@ void ft_case_five(t_stak *a)
         ft_rra(&a);
 }
 
-void ft_ez_case(t_stak *a)
+void ft_ez_case(t_stack *a)
 {
     ft_printf("Cuantos nodos hay en la lista: %i\n", ft_listlen(a));
     if (ft_listlen(a) == 2)

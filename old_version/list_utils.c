@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:51:26 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/15 11:19:57 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/28 10:39:04 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t ft_listlen(t_stak *a)
+size_t ft_listlen(t_stack *a)
 {
 	size_t i;
-	t_stak *temp;
+	t_stack *temp;
 
 	temp = a;
 	i = 0;
@@ -41,9 +41,9 @@ int	ft_is_allnum(char *str)
 	return (1);
 }
 
-int ft_is_shoted(t_stak *a)
+int ft_is_shoted(t_stack *a)
 {
-	t_stak	*temp;
+	t_stack	*temp;
 
 	temp = a;
 	while (temp->next != NULL)
@@ -55,10 +55,10 @@ int ft_is_shoted(t_stak *a)
 	return (1);
 }
 
-int ft_is_repeat(t_stak *a)
+int ft_is_repeat(t_stack *a)
 {
-	t_stak	*temp;
-	t_stak	*temp2;
+	t_stack	*temp;
+	t_stack	*temp2;
 
 	temp = a;
 	while (temp->next != NULL)
@@ -75,9 +75,9 @@ int ft_is_repeat(t_stak *a)
 	return (0);
 }
 
-void	ft_print_list(t_stak *a)
+void	ft_print_list(t_stack *a)
 {
-	t_stak	*temp;
+	t_stack	*temp;
 
 	temp = a;
 	while (temp != NULL)
