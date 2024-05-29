@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/29 10:57:53 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:36:59 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,14 @@ t_stack *ft_get_min_node(t_stack *a);
 void    ft_sa(t_stack **a);
 void	ft_ra(t_stack **a);
 void	ft_rra(t_stack **a);
+void	ft_pb(t_stack **a, t_stack **b);
 
 
 //movements_b.c
 void    ft_sb(t_stack **b);
 void	ft_rrb(t_stack **b);
-void ft_rb(t_stack **b);
+void	ft_rb(t_stack **b);
+void	ft_pa(t_stack **a, t_stack **b);
 
 
 
@@ -62,8 +64,9 @@ void ft_rb(t_stack **b);
 void    ft_sx(t_stack **stack);
 void    ft_rx(t_stack **stack);
 void	ft_rrx(t_stack **stack);
-void	ft_pb(t_stack **a, t_stack **b);
-void	ft_pa(t_stack **a, t_stack **b);
+void	ft_rr(t_stack **a, t_stack **b);
+void	ft_rrr(t_stack **a, t_stack **b);
+
 
 //ez_short.c
 void    ft_short_two(t_stack **a);

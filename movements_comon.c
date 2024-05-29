@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 08:00:56 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/28 10:43:22 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:36:46 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,39 +67,18 @@ void ft_rrx(t_stack **stack)
 	*stack = last;
 }
 
-
-// Move from stack a to stack b
-void	ft_pb(t_stack **a, t_stack **b)
+void ft_rr(t_stack **a, t_stack **b)
 {
-	t_stack  *temp;
-
-	temp = *a;
-	if (!*a)
-		return ;
-	*a = (*a)->next;
-	if (*a)
-	(*a)->prev = NULL;
-	if (*b)
-		(*b)->prev = temp;
-	temp->next = *b;
-	*b = temp;
-	ft_printf("pb\n");
+	ft_rx(a);
+	ft_rx(b);
+	printf("rr\n");
+}
+void ft_rrr(t_stack **a, t_stack **b)
+{
+	ft_rrx(a);
+	ft_rrx(b);
+	printf("rrr\n");
 }
 
 
-void	ft_pa(t_stack **a, t_stack **b)
-{
-	t_stack  *temp;
 
-	temp = *b;
-	if (!*b)
-		return ;
-	*b = (*b)->next;
-	if (*b)
-	(*b)->prev = NULL;
-	if (*a)
-		(*a)->prev = temp;
-	temp->next = *a;
-	*a = temp;
-	ft_printf("pa\n");
-}

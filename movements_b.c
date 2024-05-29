@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 08:00:44 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/28 10:39:04 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:33:26 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,19 @@ void	ft_rrb(t_stack **b)
 	ft_printf("rrb\n");
 }
 
+void	ft_pa(t_stack **a, t_stack **b)
+{
+	t_stack  *temp;
+
+	temp = *b;
+	if (!*b)
+		return ;
+	*b = (*b)->next;
+	if (*b)
+	(*b)->prev = NULL;
+	if (*a)
+		(*a)->prev = temp;
+	temp->next = *a;
+	*a = temp;
+	ft_printf("pa\n");
+}
