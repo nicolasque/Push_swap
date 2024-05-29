@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 08:08:07 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/28 10:57:53 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/29 10:33:18 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 t_stack  *ft_ez_short(t_stack *a)
 {
-    if (ft_list_len(a) == 2)
+    int list_len;
+
+    list_len = ft_list_len(a);
+    if (list_len == 2)
         ft_short_two(&a);
-    if (ft_list_len(a) == 3)
+    if (list_len == 3)
         ft_short_three(&a);
+    if (list_len == 4)
+        ft_short_four(&a);
     return (a);
 }
 
@@ -30,35 +35,48 @@ void    ft_short_two(t_stack **a)
 
 void ft_short_three(t_stack **a)
 {
-    int first = (*a)->value;
-    int second = (*a)->next->value;
-    int third = (*a)->next->next->value;
-
-    if (first > second)
+    if ((*a)->value > (*a)->next->value)
     {
-        if (second > third) 
-        { // Case [3, 2, 1]
+        if ((*a)->next->value > (*a)->next->next->value) 
+        {
             ft_sa(a);
             ft_rra(a);
         } 
-        else if (first > third) 
+        else if ((*a)->value > (*a)->next->next->value) 
             ft_ra(a);
         else
         {
-            ft_rra(a);  // Corrected operation
+            ft_rra(a);
             ft_sa(a);
             ft_rra(a);
         }
+        return ;
     }
-    else
-    { // first < second
-        if (first > third)
-            ft_rra(a);
-        else if (second > third)
-        { // Case [1, 2, 3]
-            ft_sa(a);
-            ft_ra(a);
-        } // Case [3, 1, 2] - already sorted, do nothing
+    if ((*a)->value > (*a)->next->next->value)
+        ft_rra(a);
+    else if ((*a)->next->value > (*a)->next->next->value)
+    {
+        ft_sa(a);
+        ft_ra(a);
     }
+
 }
+
+
+// void    ft_short_four(t_stack **a)
+// {
+//     t_stack *max_node = ft_get_max_node(*a);
+//     // t_stack *forth = (*a)->next->next->next;
+//     if (max_node->value != (*a)->value)
+//     {
+//         max_node->prev->next = max_node->next;
+//         if (max_node->next)
+//             max_node->next->prev = max_node->prev;
+//     }
+//     else
+//         (*a) = (*a)->next;
+//     ft_short_three(a);
+//     (*a)->next->next->next = max_node;
+//     max_node->next = NULL;
+// }
 

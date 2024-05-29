@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:32:38 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/28 10:39:04 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/29 10:29:24 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,20 @@ t_stack  *ft_get_last_node(t_stack *a)
         a = a->next;
     }
     return (a);
+}
+
+t_stack *ft_get_max_node(t_stack *a)
+{
+    t_stack *max_node;
+
+    max_node = a;
+    while (a)
+    {
+        if (max_node->value < a->value)
+        {
+            max_node = a;
+        }
+        a = a->next;
+    }
+    return (max_node);
 }
