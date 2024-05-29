@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/29 10:28:29 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/29 10:55:04 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_init_stack(int argc, char **argv, t_stack *a)
 	while (i < argc)
 	{
 		a->value = atol(argv[i]);
-		// a->li_pos = i;
+		a->index = i - 1;
 		if (i < argc - 1)
 		{
 			a->next = (t_stack *)malloc(1 * sizeof(t_stack));
@@ -64,22 +64,21 @@ void	ft_print_revese(t_stack *a)
 int main(int argc, char **argv)
 {
 	t_stack  *a;
-	// t_stack  *b;
+	t_stack  *b;
 
 	if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	if (ft_check_args(argc, argv))
 		return (ft_printf("Error\n"), -1);
 	a = (t_stack *)malloc(1 * sizeof(t_stack));
-	// b = NULL;
+	b = NULL;
 	if (ft_init_stack(argc, argv, a))
 		return (-1);
 	if (!ft_is_order(a))
 		return (ft_free_stack(a), 0); //If the stack is ordered you do nothing and return 0
 
 	// ft_print_stack(a);
-	if (ft_list_len(a) <= 4)
-		a = ft_ez_short(a);
+		a = ft_ez_short(a, b);
 
 
 	// ft_printf("=======\n");
@@ -94,3 +93,5 @@ int main(int argc, char **argv)
 	return (0);
 
 }
+
+
