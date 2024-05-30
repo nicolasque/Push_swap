@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 09:51:15 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/30 11:52:12 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:58:18 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,6 @@ int count_used_bits(int num)
     }
     return count;
 }
-int max_used_bits(t_stack **a)
-{
-    int max_bits = 0;
-    t_stack *temp = *a;
-    while (temp)
-    {
-        int bits = count_used_bits(abs(temp->value));
-        if (bits > max_bits)
-            max_bits = bits;
-        temp = temp->next;
-    }
-    return max_bits;
-}
 
 void    ft_radix(t_stack **a, t_stack **b)
 {
@@ -42,18 +29,14 @@ void    ft_radix(t_stack **a, t_stack **b)
     int i;
     int a_len;
     int b_len;
-    int max_bits = max_used_bits(a);
 
-    i = 0;
-    while (i <= max_bits)
+    i = -1;
+    while (++i < 32 && ft_is_order(*a))
     {
         a_len = ft_list_len(*a);
         while (a_len--)
         {
-            if ((*a)->value < 0)
-                bit = (abs((*a)->value) >> i) & 1;
-            else
-                bit = ((*a)->value >> i) & 1;
+            bit = ((*a)->value >> i) & 1;
             if (bit)
                 ft_ra(a);
             else
@@ -61,9 +44,9 @@ void    ft_radix(t_stack **a, t_stack **b)
         }
         b_len = ft_list_len(*b);
         while (b_len--)
-        {
             ft_pa(a, b);
-        }
-        i++;
     }
+    while (ft_get_last_node(*a)->value != ft_get_max_node(*a)->value)
+        ft_rra(a);
 }
+

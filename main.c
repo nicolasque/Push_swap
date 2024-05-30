@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/30 11:43:54 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:56:32 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ int main(int argc, char **argv)
 	
 	// ft_ra(&a);
 	
-	// ft_printf("=======\n");
-	// ft_print_stack(a);
+	ft_printf("=======\n");
+	ft_print_stack(a);
 
 	
 
