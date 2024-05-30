@@ -6,13 +6,12 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/30 10:27:00 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:27:51 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "push_swap.h"
+
 
 int	ft_init_stack(int argc, char **argv, t_stack *a)
 {
@@ -38,6 +37,7 @@ int	ft_init_stack(int argc, char **argv, t_stack *a)
             a->next = NULL;
         i++;
     }
+	
     return (0);
 }
 
@@ -78,7 +78,7 @@ int main(int argc, char **argv)
 	if (!ft_is_order(a))
 		return (ft_free_stack(a), 0); //If the stack is ordered you do nothing and return 0
 
-	ft_print_stack(a);
+	// ft_print_stack(a);
 	if (ft_list_len(a) <= 4)
 		ft_ez_short(&a, &b);
 	else
