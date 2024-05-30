@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/29 11:40:20 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/05/30 10:15:33 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,9 @@ void    ft_short_two(t_stack **a);
 void    ft_short_three(t_stack **a);
 void	ft_ez_short(t_stack **a, t_stack **b);
 void    ft_short_four(t_stack **a, t_stack **b);
+
+//radix.c
+void    ft_radix(t_stack **a, t_stack **b);
+
 
 #endif //PUSH_SWAP_H
