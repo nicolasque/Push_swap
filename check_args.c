@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:35:53 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/28 10:39:04 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/03 12:03:01 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int ft_is_all_num(char *str)
 	{
 		if (str[i] == '-' || str[i] == '+')
 			i++;
-		if (!ft_isdigit(str[i]))
+		if (!ft_isdigit(str[i]) || i > 11)
 			return (0);
 		i++;
 	}

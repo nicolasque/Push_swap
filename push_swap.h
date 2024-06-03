@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/03 11:20:17 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/03 12:04:57 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct t_stack
 {
-	int		value;
+	long	value;
 	int		index;
 
 	struct t_stack	*prev;
