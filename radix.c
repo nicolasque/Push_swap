@@ -82,3 +82,4 @@ void    ft_radix(t_stack **a, t_stack **b)
         ft_rra(a);
 }
 
+
