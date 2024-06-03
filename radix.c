@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 09:51:15 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/31 08:15:36 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:26:26 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,46 @@ int    ft_check_order_negatives(t_stack *a)
     return (1);
 }
 
+// void    ft_radix(t_stack **a, t_stack **b)
+// {
+//     int bit;
+//     int i;
+//     int a_len;
+//     int b_len;
+
+//     i = -1;
+//     while (++i < 32 && ft_is_order(*a))
+//     {
+//         a_len = ft_list_len(*a);
+//         while (a_len--)
+//         {
+//             bit = ((*a)->value >> i) & 1;
+//             if (bit)
+//                 ft_ra(a);
+//             else
+//                 ft_pb(a, b);
+//         }
+//         b_len = ft_list_len(*b);
+//         while (b_len--)
+//         {
+//             bit = ((*b)->value >> i) & 1;
+//             if (bit)
+//                 ft_pa(a, b);
+//             else
+//                 ft_rb(b);
+//         }
+//         b_len = ft_list_len(*b);
+//         while (b_len--)
+//         {
+//             ft_pa(a, b);   
+//         }
+//         if (ft_check_order_negatives(*a) && !(*b))
+//             break ;
+//     }
+//     while (ft_get_last_node(*a)->value != ft_get_max_node(*a)->value)
+//         ft_rra(a);
+// }
+
 void    ft_radix(t_stack **a, t_stack **b)
 {
     int bit;
@@ -49,13 +89,13 @@ void    ft_radix(t_stack **a, t_stack **b)
     int a_len;
     int b_len;
 
-    i = -1;
-    while (++i < 32 && ft_is_order(*a))
+    i = 0;
+    while (i <= 31 && ft_is_order(*a))
     {
         a_len = ft_list_len(*a);
         while (a_len--)
         {
-            bit = ((*a)->value >> i) & 1;
+            bit = ((*a)->index >> i) & 1;
             if (bit)
                 ft_ra(a);
             else
@@ -64,22 +104,9 @@ void    ft_radix(t_stack **a, t_stack **b)
         b_len = ft_list_len(*b);
         while (b_len--)
         {
-            bit = ((*b)->value >> i) & 1;
-            if (bit)
-                ft_pa(a, b);
-            else
-                ft_rb(b);
+            ft_pa(a, b);
         }
-        b_len = ft_list_len(*b);
-        while (b_len--)
-        {
-            ft_pa(a, b);   
-        }
-        if (ft_check_order_negatives(*a) && !(*b))
-            break ;
+        i++;
     }
-    while (ft_get_last_node(*a)->value != ft_get_max_node(*a)->value)
-        ft_rra(a);
 }
-
 

@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/30 10:15:33 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:20:17 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int ft_list_len(t_stack *a);
 t_stack  *ft_get_last_node(t_stack *a);
 t_stack *ft_get_max_node(t_stack *a);
 t_stack *ft_get_min_node(t_stack *a);
+void ft_give_index(t_stack **a);
+
 
 //movements_a.c
 void    ft_sa(t_stack **a);
