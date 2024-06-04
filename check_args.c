@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:35:53 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/03 12:03:01 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/04 08:25:32 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	ft_check_args(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
+		ft_printf("ARGV: %s", argv[i]);
 		if (!ft_is_all_num(argv[i]))
 			return (-1);
 		if (ft_is_repeat(argc, argv, argv[i], i))
@@ -72,11 +73,9 @@ int ft_is_order(t_stack *a)
 {
     while (a->next)
     {
-        // ft_printf("Se esta comprando: %i >= %i\n", a->value, a->next->value);
         if (a->value >= a->next->value)
             return (-1);
         a = a->next;
-        // printf("aaa");
     }
     return (0);
 }

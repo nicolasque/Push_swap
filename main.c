@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/03 12:05:26 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/04 08:22:42 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,15 @@ int main(int argc, char **argv)
 {
 	t_stack  *a;
 	t_stack  *b;
+	// int	i = 0;
 
-	if (argc == 2)
+	if (argc == 2 && ft_strchr(argv[1], ' '))
 		argv = ft_split(argv[1], ' ');
+	// while (argv[i])
+	// {
+	// 	ft_printf("QUE ay en argv: %s\n", argv[i]);
+	// 	i++;
+	// }
 	if (ft_check_args(argc, argv))
 		return (ft_printf("Error\n"), -1);
 	a = (t_stack *)malloc(1 * sizeof(t_stack));
