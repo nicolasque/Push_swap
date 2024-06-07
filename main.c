@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/07 10:47:02 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/07 10:54:07 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,16 @@ int main(int argc, char **argv)
 {
 	t_stack  *a;
 	t_stack  *b;
+	int		free_argv;
 
-	argv++;
+	free_argv = 0;
 	if (argc == 2 && ft_strchr(argv[0], ' '))
 	{
 		argv = ft_split(argv[0], ' ');
 		argc = ft_argv_len(argv);
+		free_argv++;
 	}
-	if (ft_check_args(argc, argv))
+	if (ft_check_args(argc, argv++))
 		return (ft_printf("Error\n"), -1);
 	a = (t_stack *)malloc(1 * sizeof(t_stack));
 	b = NULL;
@@ -85,8 +87,7 @@ int main(int argc, char **argv)
 		ft_ez_short(&a, &b);
 	else
 		ft_radix(&a, &b);
-	ft_printf("=======\n");
-	ft_print_stack(a);
-	
+	if (free_argv)
+		ft_free_split(argv, argc);
 	return (ft_free_stack(a), ft_free_stack(b), 0);
 }
