@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/07 10:54:07 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:21:07 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,24 +70,25 @@ int main(int argc, char **argv)
 	int		free_argv;
 
 	free_argv = 0;
+	argv++;
 	if (argc == 2 && ft_strchr(argv[0], ' '))
 	{
 		argv = ft_split(argv[0], ' ');
 		argc = ft_argv_len(argv);
 		free_argv++;
 	}
-	if (ft_check_args(argc, argv++))
+	if (ft_check_args(argc, argv))
 		return (ft_printf("Error\n"), -1);
 	a = (t_stack *)malloc(1 * sizeof(t_stack));
 	b = NULL;
 	if (ft_init_stack(argc, argv, a) || !ft_is_order(a))
 		return (ft_free_stack(a), 0);
 	ft_give_index(&a);
-	if (ft_list_len(a) <= 4)
-		ft_ez_short(&a, &b);
-	else
+	if (!ft_ez_short(&a, &b))
 		ft_radix(&a, &b);
+	ft_printf("=======\n");
+	ft_print_stack(a);
 	if (free_argv)
-		ft_free_split(argv, argc);
+		ft_free_split(argv);
 	return (ft_free_stack(a), ft_free_stack(b), 0);
 }

@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/07 10:43:55 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:21:28 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_check_max_min_int(long nbr);
 
 //free.c
 void    ft_free_stack(t_stack *a);
-char	**ft_free_split(char **result, int i);
+void	ft_free_split(char **result);
 
 //list_utils.c
 int ft_list_len(t_stack *a);
@@ -69,7 +69,7 @@ void	ft_rrr(t_stack **a, t_stack **b);
 //ez_short.c
 void    ft_short_two(t_stack **a);
 void    ft_short_three(t_stack **a);
-void	ft_ez_short(t_stack **a, t_stack **b);
+int	ft_ez_short(t_stack **a, t_stack **b);
 void    ft_short_four(t_stack **a, t_stack **b);
 
 //radix.c

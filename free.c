@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:16:13 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/07 10:43:41 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:20:51 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@ void    ft_free_stack(t_stack *a)
     }
 }
 
-char	**ft_free_split(char **result, int i)
+void     ft_free_split(char **result)
 {
-	while (i >= 0)
-	{
-		free(result[i--]);
-	}
-	free(result);
-	return (NULL);
+    int i;
+
+    i = 0;
+	while (result[i])
+    {
+        free(result[i]);
+        i++;
+    }
 }
