@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:35:53 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/07 10:33:30 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:32:36 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int	ft_check_args(int argc, char **argv)
 	i = 0;
 	while (i < argc - 1)
 	{
-		ft_printf("ARGV: %s\n", argv[i]);
 		if (!ft_is_all_num(argv[i]))
 			return (-1);
 		if (ft_is_repeat(argc, argv, argv[i], i))
