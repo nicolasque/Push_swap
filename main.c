@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/04 08:22:42 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/07 10:47:02 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int	ft_init_stack(int argc, char **argv, t_stack *a)
 
     if (!a)
         return (-1);
-    i = 1;
+    i = 0;
     a->prev = NULL;
-    while (i < argc)
+    while (i < argc - 1)
     {
         a->value = atol(argv[i]);
         a->index = i - 1;
-        if (i < argc - 1)
+        if (i < argc - 2)
         {
             a->next = (t_stack *)malloc(1 * sizeof(t_stack));
             if (!a->next || ft_check_max_min_int(a->value))
@@ -52,44 +52,41 @@ void	ft_print_stack(t_stack *a)
 	}
 }
 
-void	ft_print_revese(t_stack *a)
+int	ft_argv_len(char **argv)
 {
-	a = ft_get_last_node(a);
-	while (a)
-	{
-		printf("El valor es: %li\n", a->value);
-		a = a->prev;
-	}
+	int	i;
+
+	i = 0;
+	while(argv[i])
+		i++;
+	i++;
+	return (i);
 }
 
 int main(int argc, char **argv)
 {
 	t_stack  *a;
 	t_stack  *b;
-	// int	i = 0;
 
-	if (argc == 2 && ft_strchr(argv[1], ' '))
-		argv = ft_split(argv[1], ' ');
-	// while (argv[i])
-	// {
-	// 	ft_printf("QUE ay en argv: %s\n", argv[i]);
-	// 	i++;
-	// }
+	argv++;
+	if (argc == 2 && ft_strchr(argv[0], ' '))
+	{
+		argv = ft_split(argv[0], ' ');
+		argc = ft_argv_len(argv);
+	}
 	if (ft_check_args(argc, argv))
 		return (ft_printf("Error\n"), -1);
 	a = (t_stack *)malloc(1 * sizeof(t_stack));
 	b = NULL;
-	if (ft_init_stack(argc, argv, a))
-		return (-1);
-	if (!ft_is_order(a))
+	if (ft_init_stack(argc, argv, a) || !ft_is_order(a))
 		return (ft_free_stack(a), 0);
 	ft_give_index(&a);
-	// ft_print_stack(a);
 	if (ft_list_len(a) <= 4)
 		ft_ez_short(&a, &b);
 	else
 		ft_radix(&a, &b);
 	ft_printf("=======\n");
 	ft_print_stack(a);
+	
 	return (ft_free_stack(a), ft_free_stack(b), 0);
 }

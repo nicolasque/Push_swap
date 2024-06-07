@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:21:46 by nquecedo          #+#    #+#             */
-/*   Updated: 2023/12/19 21:00:28 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/07 10:43:28 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	ft_sub_len(char const *s, char c)
 	return (i);
 }
 
-static char	**ft_free_mem(char **result, int i)
+static char	**ft_free_split(char **result, int i)
 {
 	while (i >= 0)
 	{
@@ -79,7 +79,7 @@ char	**ft_split(char const *s, char c)
 		len = ft_sub_len(s, c);
 		result[i] = (char *)malloc((len + 1) * sizeof(char));
 		if (!result[i])
-			return (ft_free_mem(result, i));
+			return (ft_free_split(result, i));
 		ft_strlcpy(result[i], s, len + 1);
 		s += len;
 		i++;

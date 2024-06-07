@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:35:53 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/04 08:25:32 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/07 10:33:30 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ int ft_is_repeat(int argc, char** argv, char *str, int list_position)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (i < argc)
 	{
 		if (i == list_position)
 			return (0);
 		else
 		{
-			if (!ft_strncmp(str, argv[i], 11))
+			if (!ft_strncmp(str, argv[i], ft_strlen(str)))
 				return (-1);
 		}
 		i ++;
@@ -55,17 +55,16 @@ int	ft_check_args(int argc, char **argv)
 
 	if (argc < 2)
 		return (-1);
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (i < argc - 1)
 	{
-		ft_printf("ARGV: %s", argv[i]);
+		ft_printf("ARGV: %s\n", argv[i]);
 		if (!ft_is_all_num(argv[i]))
 			return (-1);
 		if (ft_is_repeat(argc, argv, argv[i], i))
 			return (-2);
 		i++;
 	}
-
 	return (0);
 }
 
