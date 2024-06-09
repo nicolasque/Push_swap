@@ -1,6 +1,6 @@
 # Variables
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -O3
+CFLAGS = -Wall -Wextra -Werror -O3 #-g3 -fsanitize=address
 NAME = a.out
 SRC = main.c check_args.c free.c movements_a.c \
 		list_utils.c movements_b.c movements_comon.c ez_short.c \

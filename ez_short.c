@@ -6,23 +6,26 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 08:08:07 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/29 11:39:21 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:13:35 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void  ft_ez_short(t_stack **a, t_stack **b)
+int  ft_ez_short(t_stack **a, t_stack **b)
 {
     int list_len;
 
     list_len = ft_list_len(*a);
+    if (list_len > 4)
+        return (0);
     if (list_len == 2)
         ft_short_two(a);
-    if (list_len == 3)
+    else if (list_len == 3)
         ft_short_three(a);
-    if (list_len == 4)
+    else if (list_len == 4)
         ft_short_four(a, b);
+    return (1);
 }
 
 void    ft_short_two(t_stack **a)

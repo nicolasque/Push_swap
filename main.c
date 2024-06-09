@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/30 11:56:32 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:25:58 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int	ft_init_stack(int argc, char **argv, t_stack *a)
 
     if (!a)
         return (-1);
-    i = 1;
+    i = 0;
     a->prev = NULL;
-    while (i < argc)
+    while (i < argc - 1)
     {
         a->value = atol(argv[i]);
         a->index = i - 1;
-        if (i < argc - 1)
+        if (i < argc - 2)
         {
             a->next = (t_stack *)malloc(1 * sizeof(t_stack));
             if (!a->next || ft_check_max_min_int(a->value))
@@ -37,7 +37,7 @@ int	ft_init_stack(int argc, char **argv, t_stack *a)
             a->next = NULL;
         i++;
     }
-	
+
     return (0);
 }
 
@@ -47,57 +47,48 @@ void	ft_print_stack(t_stack *a)
 		return ;
 	while (a)
 	{
-		printf("%i\n", a->value);
+		printf("valor: %li, inice: %i\n", a->value, a->index);
 		a = a->next;
 	}
 }
 
-void	ft_print_revese(t_stack *a)
+int	ft_argv_len(char **argv)
 {
-	a = ft_get_last_node(a);
-	while (a)
-	{
-		printf("El valor es: %i\n", a->value);
-		a = a->prev;
-	}
+	int	i;
+
+	i = 0;
+	while(argv[i])
+		i++;
+	i++;
+	return (i);
 }
 
 int main(int argc, char **argv)
 {
 	t_stack  *a;
 	t_stack  *b;
+	int		free_argv;
 
-	if (argc == 2)
-		argv = ft_split(argv[1], ' ');
+	free_argv = 0;
+	argv++;
+	if (argc == 2 && ft_strchr(argv[0], ' '))
+	{
+		argv = ft_split(argv[0], ' ');
+		argc = ft_argv_len(argv);
+		free_argv++;
+	}
 	if (ft_check_args(argc, argv))
 		return (ft_printf("Error\n"), -1);
 	a = (t_stack *)malloc(1 * sizeof(t_stack));
 	b = NULL;
-	if (ft_init_stack(argc, argv, a))
-		return (-1);
-	if (!ft_is_order(a))
-		return (ft_free_stack(a), 0); //If the stack is ordered you do nothing and return 0
-
-	// ft_print_stack(a);
-	if (ft_list_len(a) <= 4)
-		ft_ez_short(&a, &b);
-	else
+	if (ft_init_stack(argc, argv, a) || !ft_is_order(a))
+		return (ft_free_stack(a), 0);
+	ft_give_index(&a);
+	if (!ft_ez_short(&a, &b))
 		ft_radix(&a, &b);
-
-	// ft_printf("El largo de a es = %i\n", ft_list_len(a));
-	// // ft_printf("=======\n");
-	// ft_print_stack(a);
-	// // ft_printf("=======\n");
-	
-	// ft_ra(&a);
-	
 	ft_printf("=======\n");
 	ft_print_stack(a);
-
-	
-
-	return (0);
-
+	if (free_argv)
+		ft_free_split(argv);
+	return (ft_free_stack(a), ft_free_stack(b), 0);
 }
-
-

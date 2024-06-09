@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 08:00:56 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/29 11:36:46 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/03 08:40:31 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void ft_rr(t_stack **a, t_stack **b)
 	ft_rx(b);
 	printf("rr\n");
 }
+
 void ft_rrr(t_stack **a, t_stack **b)
 {
 	ft_rrx(a);

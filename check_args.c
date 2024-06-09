@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:35:53 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/28 10:39:04 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:32:36 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int ft_is_all_num(char *str)
 	{
 		if (str[i] == '-' || str[i] == '+')
 			i++;
-		if (!ft_isdigit(str[i]))
+		if (!ft_isdigit(str[i]) || i > 11)
 			return (0);
 		i++;
 	}
@@ -33,14 +33,14 @@ int ft_is_repeat(int argc, char** argv, char *str, int list_position)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (i < argc)
 	{
 		if (i == list_position)
 			return (0);
 		else
 		{
-			if (!ft_strncmp(str, argv[i], 11))
+			if (!ft_strncmp(str, argv[i], ft_strlen(str)))
 				return (-1);
 		}
 		i ++;
@@ -55,8 +55,8 @@ int	ft_check_args(int argc, char **argv)
 
 	if (argc < 2)
 		return (-1);
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (i < argc - 1)
 	{
 		if (!ft_is_all_num(argv[i]))
 			return (-1);
@@ -64,7 +64,6 @@ int	ft_check_args(int argc, char **argv)
 			return (-2);
 		i++;
 	}
-
 	return (0);
 }
 
@@ -72,11 +71,9 @@ int ft_is_order(t_stack *a)
 {
     while (a->next)
     {
-        // ft_printf("Se esta comprando: %i >= %i\n", a->value, a->next->value);
         if (a->value >= a->next->value)
             return (-1);
         a = a->next;
-        // printf("aaa");
     }
     return (0);
 }

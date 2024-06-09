@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:51:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/30 10:15:33 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:21:28 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct t_stack
 {
-	int		value;
+	long	value;
 	int		index;
 
 	struct t_stack	*prev;
@@ -36,12 +36,15 @@ int	ft_check_max_min_int(long nbr);
 
 //free.c
 void    ft_free_stack(t_stack *a);
+void	ft_free_split(char **result);
 
 //list_utils.c
 int ft_list_len(t_stack *a);
 t_stack  *ft_get_last_node(t_stack *a);
 t_stack *ft_get_max_node(t_stack *a);
 t_stack *ft_get_min_node(t_stack *a);
+void ft_give_index(t_stack **a);
+
 
 //movements_a.c
 void    ft_sa(t_stack **a);
@@ -66,7 +69,7 @@ void	ft_rrr(t_stack **a, t_stack **b);
 //ez_short.c
 void    ft_short_two(t_stack **a);
 void    ft_short_three(t_stack **a);
-void	ft_ez_short(t_stack **a, t_stack **b);
+int	ft_ez_short(t_stack **a, t_stack **b);
 void    ft_short_four(t_stack **a, t_stack **b);
 
 //radix.c
