@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 08:08:07 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/07 11:13:35 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/20 11:49:37 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void ft_short_three(t_stack **a)
         ft_sa(a);
         ft_ra(a);
     }
-
 }
 
 void    ft_short_four(t_stack **a, t_stack **b)
