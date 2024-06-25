@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/25 11:51:17 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/25 11:51:44 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,39 +62,6 @@ int	ft_argv_len(char **argv)
 	i++;
 	return (i);
 }
-
-
-
-
-void ordenar_por_insercion(t_stack **a, t_stack **b)
-{
-    // Mover el primer elemento de A a B para iniciar el proceso
-    ft_pb(a, b);
-    while (*a != NULL) // Mientras haya elementos en A
-    {
-        ft_pb(a, b); // Mover el elemento actual de A a B
-        if ((*b)->next && (*b)->value < (*b)->next->value)
-        {
-            // Si el elemento es menor o igual que el tope de B, usar ft_sb si ayuda
-            ft_sb(b);
-        }
-        else
-        {
-            // Si el elemento es mayor que el tope de B, rotar B hasta encontrar la posición correcta
-            while ((*b)->next && (*b)->value > (*b)->next->value)
-            {
-                ft_rb(b);
-            }
-        }
-    }
-    // Mover todos los elementos de B de vuelta a A
-    while (*b != NULL)
-    {
-        ft_pa(a, b);
-    }
-}
-
-
 
 
 int main(int argc, char **argv)
