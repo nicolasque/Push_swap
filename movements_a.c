@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:24:28 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/27 09:33:31 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/27 09:34:42 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ void	ft_sa(t_stack **a)
 {
 	ft_sx(a);
 	ft_printf("sa\n");
-} 
+}
 
-
-void ft_ra(t_stack **a)
+void	ft_ra(t_stack **a)
 {
 	ft_rx(a);
 	ft_printf("ra\n");
@@ -34,14 +33,14 @@ void	ft_rra(t_stack **a)
 // Move from stack a to stack b
 void	ft_pb(t_stack **a, t_stack **b)
 {
-	t_stack  *temp;
+	t_stack	*temp;
 
 	temp = *a;
 	if (!*a)
 		return ;
 	*a = (*a)->next;
 	if (*a)
-	(*a)->prev = NULL;
+		(*a)->prev = NULL;
 	if (*b)
 		(*b)->prev = temp;
 	temp->next = *b;
