@@ -6,15 +6,15 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:32:38 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/27 09:41:48 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/27 09:43:11 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_list_len(t_stack *a)
+int	ft_list_len(t_stack *a)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (a)
@@ -25,7 +25,7 @@ int ft_list_len(t_stack *a)
 	return (i);
 }
 
-t_stack  *ft_get_last_node(t_stack *a)
+t_stack	*ft_get_last_node(t_stack *a)
 {
 	while (a->next)
 	{
@@ -34,9 +34,9 @@ t_stack  *ft_get_last_node(t_stack *a)
 	return (a);
 }
 
-t_stack *ft_get_max_node(t_stack *a)
+t_stack	*ft_get_max_node(t_stack *a)
 {
-	t_stack *max_node;
+	t_stack	*max_node;
 
 	max_node = a;
 	while (a)
@@ -50,9 +50,9 @@ t_stack *ft_get_max_node(t_stack *a)
 	return (max_node);
 }
 
-t_stack *ft_get_min_node(t_stack *a)
+t_stack	*ft_get_min_node(t_stack *a)
 {
-	t_stack *min_node;
+	t_stack	*min_node;
 
 	min_node = a;
 	while (a)
@@ -66,7 +66,7 @@ t_stack *ft_get_min_node(t_stack *a)
 	return (min_node);
 }
 
-void ft_give_index(t_stack **a)
+void	ft_give_index(t_stack **a)
 {
 	t_stack	*temp;
 	t_stack	*iter;
@@ -79,7 +79,8 @@ void ft_give_index(t_stack **a)
 		iter = *a;
 		while (iter)
 		{
-			if (iter->value < temp->value || (iter->value == temp->value && iter < temp))
+			if (iter->value < temp->value || \
+				(iter->value == temp->value && iter < temp))
 				i++;
 			iter = iter->next;
 		}
@@ -87,4 +88,3 @@ void ft_give_index(t_stack **a)
 		temp = temp->next;
 	}
 }
-
