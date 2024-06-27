@@ -6,13 +6,13 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:24:28 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/20 11:49:28 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/27 09:33:31 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_sa(t_stack **a)
+void	ft_sa(t_stack **a)
 {
 	ft_sx(a);
 	ft_printf("sa\n");

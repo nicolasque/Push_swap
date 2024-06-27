@@ -6,19 +6,19 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 08:00:44 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/05/29 11:33:26 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/27 09:33:15 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_sb(t_stack **b)
+void	ft_sb(t_stack **b)
 {
 	ft_sx(b);
 	ft_printf("sb\n");
-} 
+}
 
-void ft_rb(t_stack **b)
+void	ft_rb(t_stack **b)
 {
 	ft_rx(b);
 	ft_printf("rb\n");
@@ -32,14 +32,14 @@ void	ft_rrb(t_stack **b)
 
 void	ft_pa(t_stack **a, t_stack **b)
 {
-	t_stack  *temp;
+	t_stack	*temp;
 
 	temp = *b;
 	if (!*b)
 		return ;
 	*b = (*b)->next;
 	if (*b)
-	(*b)->prev = NULL;
+		(*b)->prev = NULL;
 	if (*a)
 		(*a)->prev = temp;
 	temp->next = *a;

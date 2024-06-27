@@ -6,14 +6,14 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 09:35:53 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/07 11:32:36 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/06/27 09:24:52 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //If there is a leter in the args rturns 1
-int ft_is_all_num(char *str)
+int	ft_is_all_num(char *str)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ int ft_is_all_num(char *str)
 	return (1);
 }
 
-int ft_is_repeat(int argc, char** argv, char *str, int list_position)
+int	ft_is_repeat(int argc, char **argv, char *str, int list_position)
 {
 	int	i;
 
@@ -48,10 +48,9 @@ int ft_is_repeat(int argc, char** argv, char *str, int list_position)
 	return (0);
 }
 
-
 int	ft_check_args(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	if (argc < 2)
 		return (-1);
@@ -67,15 +66,15 @@ int	ft_check_args(int argc, char **argv)
 	return (0);
 }
 
-int ft_is_order(t_stack *a)
+int	ft_is_order(t_stack *a)
 {
-    while (a->next)
-    {
-        if (a->value >= a->next->value)
-            return (-1);
-        a = a->next;
-    }
-    return (0);
+	while (a->next)
+	{
+		if (a->value >= a->next->value)
+			return (-1);
+		a = a->next;
+	}
+	return (0);
 }
 
 int	ft_check_max_min_int(long nbr)
