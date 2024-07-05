@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/27 09:39:53 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/07/05 10:05:28 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ int	main(int argc, char **argv)
 	ft_give_index(&a);
 	if (!ft_ez_short(&a, &b))
 		ft_radix(&a, &b);
-	ft_printf("=======\n");
-	ft_print_stack(a);
+	// ft_printf("=======\n");
+	// ft_print_stack(a);
 	if (free_argv)
 		ft_free_split(argv);
 	return (ft_free_stack(a), ft_free_stack(b), 0);
