@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 09:51:15 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/06/27 09:41:08 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/07/03 18:42:25 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,22 @@ void	ft_radix(t_stack **a, t_stack **b)
 		}
 		i++;
 	}
+}
+
+int main(int argc, char **argv)
+{
+    int i;
+    t_stack *a = NULL;
+    t_stack *b = NULL;
+    
+    if (argc < 2)
+        return (-1);
+    i = 0;
+    while (++i < argc)
+    {
+        ft_push(&a, ft_create_elem(ft_atoi(argv[i])));
+        
+    }
+	if (!ft_is_order(a))
+	
 }
