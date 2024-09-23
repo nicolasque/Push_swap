@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/09/20 17:46:04 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/09/23 10:14:03 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,11 @@ int	main(int argc, char **argv)
 	a = (t_stack *)malloc(1 * sizeof(t_stack));
 	b = NULL;
 	if (ft_init_stack(argc, argv, a) || !ft_is_order(a))
+	{
+		if (free_argv)
+			ft_free_split(argv);
 		return (ft_free_stack(a), 0);
+	}
 	ft_give_index(&a);
 	if (!ft_ez_short(&a, &b))
 		ft_radix(&a, &b);
