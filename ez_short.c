@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 08:08:07 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/09/23 10:21:13 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/09/27 14:48:18 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,16 @@ void	ft_short_three(t_stack **a)
 void	ft_short_four(t_stack **a, t_stack **b)
 {
 	t_stack	*min_node;
+	int		size;
 
+	size = ft_list_len(*a);
 	min_node = ft_get_min_node(*a);
 	while ((*a)->value != min_node->value)
 	{
-		if ((*a)->index <= 2)
-			ft_ra(a);
-		else
+		if (min_node->index < size / 2)
 			ft_rra(a);
+		else
+			ft_ra(a);
 	}
 	ft_pb(a, b);
 	ft_short_three(a);
