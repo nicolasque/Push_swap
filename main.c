@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/09/27 14:53:48 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:35:49 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,17 @@ int	ft_argv_len(char **argv)
 	return (i);
 }
 
+void ft_exit(t_stack *a, t_stack *b, char **argv, int free_argv)
+{
+	if (ft_list_len(a) > 1 && a)
+		ft_free_stack(a);
+	if (ft_list_len(b) > 2 && b)
+		ft_free_stack(b);
+	if (argv && free_argv)
+		ft_free_split(argv);
+	exit(0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -69,6 +80,8 @@ int	main(int argc, char **argv)
 
 	free_argv = 0;
 	argv++;
+	a = NULL;
+	b = NULL;
 	if (argc == 2 && ft_strchr(argv[0], ' '))
 	{
 		argv = ft_split(argv[0], ' ');
@@ -76,25 +89,13 @@ int	main(int argc, char **argv)
 		free_argv++;
 	}
 	if (ft_check_args(argc, argv))
-	{
-		if (free_argv)
-			ft_free_split(argv);
-		return (ft_printf("Error\n"), -1);
-	}
+		return (ft_printf("Error\n"),ft_exit(a, b, argv, free_argv) ,-1);
 	a = (t_stack *)malloc(1 * sizeof(t_stack));
 	b = NULL;
 	if (ft_init_stack(argc, argv, a) || !ft_is_order(a))
-	{
-		if (free_argv)
-			ft_free_split(argv);
-		return (ft_free_stack(a), 0);
-	}
+		return (ft_exit(a, b, argv, free_argv) ,-1);
 	ft_give_index(&a);
 	if (!ft_ez_short(&a, &b))
 		ft_radix(&a, &b);
-	// ft_printf("=======\n");
-	// ft_print_stack(a);
-	if (free_argv)
-		ft_free_split(argv);
-	return (ft_free_stack(a), ft_free_stack(b), 0);
+	return (ft_exit(a, b, argv, free_argv), 0);
 }

@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 08:08:07 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/09/27 14:48:18 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:15:46 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int	ft_ez_short(t_stack **a, t_stack **b)
 void	ft_short_two(t_stack **a)
 {
 	ft_sa(a);
-	// ft_free_stack(*a);
-	// exit(0);
 }
 
 void	ft_short_three(t_stack **a)
