@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:24:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2024/10/18 14:35:49 by nquecedo         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:39:32 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_argv_len(char **argv)
 	return (i);
 }
 
-void ft_exit(t_stack *a, t_stack *b, char **argv, int free_argv)
+void	ft_exit(t_stack *a, t_stack *b, char **argv, int free_argv)
 {
 	if (ft_list_len(a) > 1 && a)
 		ft_free_stack(a);
@@ -89,11 +89,11 @@ int	main(int argc, char **argv)
 		free_argv++;
 	}
 	if (ft_check_args(argc, argv))
-		return (ft_printf("Error\n"),ft_exit(a, b, argv, free_argv) ,-1);
+		return (ft_printf("Error\n"), ft_exit(a, b, argv, free_argv), -1);
 	a = (t_stack *)malloc(1 * sizeof(t_stack));
 	b = NULL;
 	if (ft_init_stack(argc, argv, a) || !ft_is_order(a))
-		return (ft_exit(a, b, argv, free_argv) ,-1);
+		return (ft_exit(a, b, argv, free_argv), -1);
 	ft_give_index(&a);
 	if (!ft_ez_short(&a, &b))
 		ft_radix(&a, &b);
